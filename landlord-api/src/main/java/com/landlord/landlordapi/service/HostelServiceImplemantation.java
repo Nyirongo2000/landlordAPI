@@ -7,6 +7,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class HostelServiceImplemantation implements HostelService {
     private HostelRepo hostelRepo;
@@ -21,5 +24,22 @@ public class HostelServiceImplemantation implements HostelService {
         BeanUtils.copyProperties(hostel,hostelEntity);
         hostelRepo.save(hostelEntity);
         return hostel;
+    }
+
+    @Override
+    public List<Hostel> getAllHostel() {
+        List<HostelEntity> hostelEntities=hostelRepo.findAll();
+        //taking employee list from the repo and converting it to the UI list
+//        looped through the employee list and covert it
+        List<Hostel> hostels = hostelEntities
+                .stream()
+                .map(theHostel -> new Hostel(
+                        theHostel.getId(),
+                        theHostel.getName(),
+                        theHostel.getTimeTaken(),
+                        theHostel.getDescription()
+                ))
+                .collect(Collectors.toList());
+        return hostels;
     }
 }

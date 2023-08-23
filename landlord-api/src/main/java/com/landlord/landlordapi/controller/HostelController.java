@@ -3,10 +3,10 @@ package com.landlord.landlordapi.controller;
 import com.landlord.landlordapi.model.Hostel;
 import com.landlord.landlordapi.service.HostelService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RequestMapping("/api/landlord")
 @RestController
 public class HostelController {
@@ -18,6 +18,10 @@ public class HostelController {
     @PostMapping("/Hostel")
     public Hostel createHostel(@RequestBody Hostel hostel){
         return hostelService.createHostel(hostel);
+    }
+    @GetMapping("/Hostel")
+    public List<Hostel> getaAllHostel(){
+        return hostelService.getAllHostel();
     }
 
 
