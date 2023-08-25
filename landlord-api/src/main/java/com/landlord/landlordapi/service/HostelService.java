@@ -8,4 +8,8 @@ public interface HostelService {
     Hostel createHostel(Hostel hostel);
 
     List<Hostel> getAllHostel();
+
+    boolean deleteHostel(Long id);
+
+    Hostel updateHostel(Long id, Hostel hostel);
 }

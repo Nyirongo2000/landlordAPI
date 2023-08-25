@@ -42,4 +42,25 @@ public class HostelServiceImplemantation implements HostelService {
                 .collect(Collectors.toList());
         return hostels;
     }
+
+    @Override
+    public boolean deleteHostel(Long id) {
+        HostelEntity hostel = hostelRepo.findById(id).get();
+        hostelRepo.delete(hostel);
+        return true;
+    }
+
+    @Override
+    public Hostel updateHostel(Long id, Hostel hostel) {
+        HostelEntity hostelEntity
+                = hostelRepo.findById(id).get();
+
+        hostelEntity.setName(hostel.getName());
+        hostelEntity.setDescription(hostel.getDescription());
+        hostelEntity.setTimeTaken(hostel.getTimeTaken());
+
+        hostelRepo.save(hostelEntity);
+        return hostel;
+    }
+
 }
