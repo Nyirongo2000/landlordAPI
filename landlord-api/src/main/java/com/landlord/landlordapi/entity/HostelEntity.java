@@ -10,18 +10,12 @@ public class HostelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String Hostel_name;
     private int timeTaken;
     @Column(length = 200)
     private String description;
+    @ManyToOne
+    private LandlordEntity landlord;
 
-    @Override
-    public String toString() {
-        return "Hostel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", timeTaken=" + timeTaken +
-                ", description='" + description + '\'' +
-                '}';
-    }
+
 }

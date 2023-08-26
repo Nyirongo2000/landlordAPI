@@ -4,16 +4,9 @@ import jakarta.persistence.Column;
 
 public class Hostel {
     private Long id;
-    private String name;
+    private String Hostel_name;
     private int timeTaken;
     private String description;
-
-    public Hostel(Long id, String name, int timeTaken, String description) {
-        this.id = id;
-        this.name = name;
-        this.timeTaken = timeTaken;
-        this.description = description;
-    }
 
     public Long getId() {
         return id;
@@ -23,12 +16,12 @@ public class Hostel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getHostel_name() {
+        return Hostel_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHostel_name(String hostel_name) {
+        Hostel_name = hostel_name;
     }
 
     public int getTimeTaken() {
@@ -44,6 +37,13 @@ public class Hostel {
     }
 
     public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Hostel(Long id, String hostel_name, int timeTaken, String description) {
+        this.id = id;
+        Hostel_name = hostel_name;
+        this.timeTaken = timeTaken;
         this.description = description;
     }
 }

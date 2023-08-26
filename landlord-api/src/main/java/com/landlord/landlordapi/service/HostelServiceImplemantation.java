@@ -35,7 +35,7 @@ public class HostelServiceImplemantation implements HostelService {
                 .stream()
                 .map(theHostel -> new Hostel(
                         theHostel.getId(),
-                        theHostel.getName(),
+                        theHostel.getHostel_name(),
                         theHostel.getTimeTaken(),
                         theHostel.getDescription()
                 ))
@@ -55,7 +55,7 @@ public class HostelServiceImplemantation implements HostelService {
         HostelEntity hostelEntity
                 = hostelRepo.findById(id).get();
 
-        hostelEntity.setName(hostel.getName());
+        hostelEntity.setHostel_name(hostel.getHostel_name());
         hostelEntity.setDescription(hostel.getDescription());
         hostelEntity.setTimeTaken(hostel.getTimeTaken());
 
