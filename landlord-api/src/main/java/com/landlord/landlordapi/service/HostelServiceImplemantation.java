@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class HostelServiceImplemantation implements HostelService {
-    private HostelRepo hostelRepo;
+    private final HostelRepo hostelRepo;
     @Autowired
     public HostelServiceImplemantation(HostelRepo hostelRepo){ this.hostelRepo=hostelRepo;}
 

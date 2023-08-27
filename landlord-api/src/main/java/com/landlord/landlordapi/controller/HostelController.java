@@ -20,6 +20,7 @@ public class HostelController {
     }
     @PostMapping("/Hostel")
     public Hostel createHostel(@RequestBody Hostel hostel){
+
         return hostelService.createHostel(hostel);
     }
     @GetMapping("/Hostel")
