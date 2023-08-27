@@ -37,7 +37,8 @@ public class HostelServiceImplemantation implements HostelService {
                         theHostel.getId(),
                         theHostel.getHostel_name(),
                         theHostel.getTimeTaken(),
-                        theHostel.getDescription()
+                        theHostel.getDescription(),
+                        theHostel.getRoom()
                 ))
                 .collect(Collectors.toList());
         return hostels;

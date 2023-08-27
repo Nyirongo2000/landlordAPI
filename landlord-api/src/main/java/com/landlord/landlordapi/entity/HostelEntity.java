@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +22,9 @@ public class HostelEntity {
     private int timeTaken;
     @Column(length = 200)
     private String description;
+    @OneToMany(targetEntity = RoomEntity.class, cascade = CascadeType.ALL)
+    @JoinColumn(name ="RoHostel_fk",referencedColumnName = "id")
+    private List<RoomEntity> room;
 
 
 }

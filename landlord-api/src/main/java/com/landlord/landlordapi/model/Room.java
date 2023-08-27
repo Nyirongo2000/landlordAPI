@@ -1,21 +1,15 @@
-package com.landlord.landlordapi.entity;
+package com.landlord.landlordapi.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Data
-@Table(name = "Room")
-@Entity
-public class RoomEntity {
-    @Id
-    @GeneratedValue
+public class Room {
     private Long id;
     private String room_Number;
     private String rType;
