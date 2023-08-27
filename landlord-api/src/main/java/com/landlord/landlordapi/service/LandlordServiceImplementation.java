@@ -39,7 +39,8 @@ public class LandlordServiceImplementation implements LandlordService {
                         lndlord.getId(),
                         lndlord.getLandlordName(),
                         lndlord.getPhone(),
-                        lndlord.getDescription()
+                        lndlord.getDescription(),
+                        lndlord.getHostel()
                 ))
                 .collect(Collectors.toList());
         return landlord;

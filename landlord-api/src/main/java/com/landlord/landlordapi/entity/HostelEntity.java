@@ -1,9 +1,15 @@
 package com.landlord.landlordapi.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Data
 @Table(name = "Hostel")
 public class HostelEntity {
@@ -14,8 +20,6 @@ public class HostelEntity {
     private int timeTaken;
     @Column(length = 200)
     private String description;
-    @ManyToOne
-    private LandlordEntity landlord;
 
 
 }

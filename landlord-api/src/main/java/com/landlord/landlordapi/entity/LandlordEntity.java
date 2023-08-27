@@ -1,11 +1,17 @@
 package com.landlord.landlordapi.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Data
 @Table(name = "Landlord")
 public class LandlordEntity {
@@ -15,8 +21,8 @@ public class LandlordEntity {
     private String LandlordName;
     private String Phone;
     private String Description;
-    @OneToMany(mappedBy = "landlord")
-//    @JoinColumn(name = "LandlordName")
+    @OneToMany(targetEntity = HostelEntity.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="HoLand_fk",referencedColumnName = "id")
     private List<HostelEntity> hostel;
 
 

@@ -1,47 +1,23 @@
 package com.landlord.landlordapi.model;
 
+import com.landlord.landlordapi.entity.HostelEntity;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.List;
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Data
 public class Landlord {
-    private Long id;
-    private String LandlordName;
-    private String Phone;
-    private String Description;
+   private Long id;
+   private String LandlordName;
+   private String Phone;
+   private String Description;
+   private List<HostelEntity> hostel;
 
-    public Landlord(Long id, String landlordName, String phone, String description) {
-        this.id = id;
-        LandlordName = landlordName;
-        Phone = phone;
-        Description = description;
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getLandlordName() {
-        return LandlordName;
-    }
-
-    public void setLandlordName(String landlordName) {
-        LandlordName = landlordName;
-    }
-
-    public String getPhone() {
-        return Phone;
-    }
-
-    public void setPhone(String phone) {
-        Phone = phone;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
-    }
 }
