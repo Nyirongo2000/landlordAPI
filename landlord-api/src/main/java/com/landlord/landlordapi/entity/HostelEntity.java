@@ -25,6 +25,8 @@ public class HostelEntity {
     @OneToMany(targetEntity = RoomEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name ="RoHostel_fk",referencedColumnName = "id")
     private List<RoomEntity> room;
+    @ManyToOne
+    private LocationEntity location;
 
 
 }

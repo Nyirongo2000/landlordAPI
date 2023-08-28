@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Data
+
 @Table(name = "Landlord")
 public class LandlordEntity {
     @Id
