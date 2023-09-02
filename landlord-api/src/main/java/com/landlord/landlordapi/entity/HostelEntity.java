@@ -18,15 +18,15 @@ public class HostelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Hostel_name;
+    private String hostel_name;
+    private String gender;
     private int timeTaken;
     @Column(length = 200)
     private String description;
     @OneToMany(targetEntity = RoomEntity.class, cascade = CascadeType.ALL)
     @JoinColumn(name ="RoHostel_fk",referencedColumnName = "id")
     private List<RoomEntity> room;
-    @ManyToOne
-    private LocationEntity location;
+
 
 
 }

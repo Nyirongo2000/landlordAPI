@@ -1,12 +1,12 @@
 package com.landlord.landlordapi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,6 +21,9 @@ public class LocationEntity {
     private String description;
     private Long latitude;
     private Long longitude;
+    @OneToMany(targetEntity = HostelEntity.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="HoLocation_fk",referencedColumnName = "location_Id")
+    private List<HostelEntity> hostel;
 //link with google coordinates
 
 }

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/api/landlord")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class HostelController {
    private final HostelService hostelService;

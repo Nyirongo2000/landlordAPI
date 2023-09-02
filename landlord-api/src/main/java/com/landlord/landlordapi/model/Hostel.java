@@ -15,8 +15,9 @@ import java.util.List;
 @Data
 public class Hostel {
     private Long id;
-    private String Hostel_name;
+    private String hostel_name;
     private int timeTaken;
+    private String gender;
     private String description;
     private List<RoomEntity> room;
 

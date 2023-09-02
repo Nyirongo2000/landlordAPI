@@ -7,7 +7,7 @@ ERD (Entity-Relationship Diagram) for landlord web app.
 A textual representation of the relationships:
 
 
-Add Images... these should be linked to a hostel. a one-to-many relationship (or one-to-one)
+_Add Images... these should be linked to a hostel. a one-to-many relationship (or one-to-one)
 
 Hostel Entity:
 
@@ -45,7 +45,7 @@ One-to-Many with Hostel (Each location can have multiple hostels,
 but each hostel is located in one location)
 
 
-draw.io, Lucid-chart, or other ERD software to create the actual diagram.
+draw.io, Lucid-chart, or other ERD software to create the actual diagram._
 
 
 

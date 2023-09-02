@@ -20,5 +20,4 @@ public class RoomEntity {
     private String room_Number;
     private String rType;
     private String rCondition;
-    private String gender;
 }
