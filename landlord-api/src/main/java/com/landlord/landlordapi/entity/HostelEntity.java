@@ -20,13 +20,33 @@ public class HostelEntity {
     private Long id;
     private String hostel_name;
     private String gender;
+    private String rentalFee;
     private int timeTaken;
     @Column(length = 200)
     private String description;
-    @OneToMany(targetEntity = RoomEntity.class, cascade = CascadeType.ALL)
-    @JoinColumn(name ="RoHostel_fk",referencedColumnName = "id")
-    private List<RoomEntity> room;
-
+    //undo
+//    @OneToMany(targetEntity = RoomEntity.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name ="RoHostel_fk",referencedColumnName = "id")
+//    private List<RoomEntity> room;
+    //some dummy data just to speed up but will eventually come back to fixing the relationship rout
+//    private String rCondition;
+    private int numberOfSingleRooms;
+    private int numberOfDoubleRooms;
+    @Transient
+    private int totalNumberOfOtherRooms;
+    //    Landlord
+    private String phoneNumber;
+    private String landlordName;
+    private String landlordDescription;
+    //    Location
+    private String location_Name;
+    private String Location_Description;
+    //    student email
+    private String StudentEmail;
+    @Transient
+    public int getTotalNumberOfOtherRooms() {
+        return (numberOfSingleRooms + numberOfDoubleRooms);
+    }
 
 
 }

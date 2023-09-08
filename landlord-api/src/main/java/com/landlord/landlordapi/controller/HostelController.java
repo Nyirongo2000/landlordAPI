@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RequestMapping("/api/landlord")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/api/landlord")
 @RestController
 public class HostelController {
    private final HostelService hostelService;
