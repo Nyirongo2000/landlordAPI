@@ -20,13 +20,13 @@ public class Hostel {
     private Long id;
     @Column(name = "hostel_name", nullable = false, length = 90)
     private String hostel_name;
-    @Column(name = "timeItTakes", length = 10)
-    private int timeTaken;
-
     private String gender;
     private String rentalFee;
+    @Column(name = "timeItTakes", length = 10)
+    private int timeTaken;
     @Column(name = "description", nullable = false, length = 200)
     private String description;
+
 //    private List<RoomEntity> room;
 //    Room
 //    private String rCondition;
@@ -42,7 +42,9 @@ public class Hostel {
     private String landlordName;
     private String landlordDescription;
 //    Location
+private String locationType;
     private String location_Name;
+
     @Column(name = "Ldescription", nullable = false, length = 200)
     private String Location_Description;
 //    student email

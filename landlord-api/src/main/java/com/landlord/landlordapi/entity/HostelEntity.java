@@ -19,7 +19,7 @@ public class HostelEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String hostel_name;
-    private String gender;
+    private String gender; 
     private String rentalFee;
     private int timeTaken;
     @Column(length = 200)
@@ -39,6 +39,7 @@ public class HostelEntity {
     private String landlordName;
     private String landlordDescription;
     //    Location
+    private String locationType;
     private String location_Name;
     private String Location_Description;
     //    student email

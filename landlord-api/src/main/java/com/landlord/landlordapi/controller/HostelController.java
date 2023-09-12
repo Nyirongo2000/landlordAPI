@@ -43,6 +43,18 @@ public class HostelController {
         hostel=hostelService.updateHostel(id,hostel);
         return ResponseEntity.ok(hostel);
     }
+    @GetMapping("/Hostel/byLocationType")
+    public ResponseEntity<List<Hostel>> getHostelsByLocationType(@RequestParam String locationType) {
+        List<Hostel> hostels = hostelService.getHostelsByLocationType(locationType);
+
+        if (!hostels.isEmpty()) {
+            return ResponseEntity.ok(hostels);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
+    }
+
+
 
 
 }

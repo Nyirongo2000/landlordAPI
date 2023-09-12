@@ -12,4 +12,6 @@ public interface HostelService {
     boolean deleteHostel(Long id);
 
     Hostel updateHostel(Long id, Hostel hostel);
+
+    List<Hostel> getHostelsByLocationType(String locationType);
 }

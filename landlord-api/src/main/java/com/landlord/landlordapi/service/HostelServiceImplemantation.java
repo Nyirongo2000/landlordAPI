@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,20 +37,20 @@ public class HostelServiceImplemantation implements HostelService {
                 .map(theHostel -> new Hostel(
                         theHostel.getId(),
                         theHostel.getHostel_name(),
-                        theHostel.getTimeTaken(),
-                        theHostel.getDescription(),
                         theHostel.getGender(),
                         theHostel.getRentalFee(),
+                        theHostel.getTimeTaken(),
+                        theHostel.getDescription(),
                         theHostel.getNumberOfSingleRooms(),
                         theHostel.getNumberOfDoubleRooms(),
                         theHostel.getTotalNumberOfOtherRooms(),
                         theHostel.getPhoneNumber(),
+                        theHostel.getLandlordName(),
+                        theHostel.getLandlordDescription(),
+                        theHostel.getLocationType(),
                         theHostel.getLocation_Name(),
                         theHostel.getLocation_Description(),
-                        theHostel.getStudentEmail(),
-                        theHostel.getLandlordName(),
-                        theHostel.getLandlordDescription()
-
+                        theHostel.getStudentEmail()
                 ))
                 .collect(Collectors.toList());
         return hostels;
@@ -73,6 +74,22 @@ public class HostelServiceImplemantation implements HostelService {
 
         hostelRepo.save(hostelEntity);
         return hostel;
+    }
+
+    @Override
+    public List<Hostel> getHostelsByLocationType(String locationType) {
+        List<HostelEntity> hostelEntities = hostelRepo.findByLocationType(locationType);
+
+        // Map HostelEntity objects to Hostel objects
+        List<Hostel> hostels = hostelEntities.stream()
+                .map(entity -> {
+                    Hostel hostel = new Hostel();
+                    BeanUtils.copyProperties(entity, hostel);
+                    return hostel;
+                })
+                .collect(Collectors.toList());
+
+        return hostels;
     }
 
 }
