@@ -14,7 +14,7 @@
 	<name>landlord-api</name>
 	<description>hostel management</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -68,12 +68,17 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version> <!-- Use the version appropriate for your project -->
 				<configuration>
-					<source>1.8</source> <!-- Set this to your desired Java version -->
-					<target>1.8</target> <!-- Set this to your desired Java version -->
+					<source>17</source> <!-- Set this to your desired Java version -->
+					<target>17</target> <!-- Set this to your desired Java version -->
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+		<repository>
+			<id>your-repository-id</id>
+			<url>your-repository-url</url>
+		</repository>
+	</distributionManagement>
 
 </project>
