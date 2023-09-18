@@ -1,5 +1,7 @@
 spring:
   datasource:
+    hikari:
+      maxLifetime: 1800000 # 30 minutes (adjust this value as needed)
     url: jdbc:postgresql://dpg-ck45e936fquc73cithig-a.oregon-postgres.render.com:5432/landlord_vdbh
     username: landlord_vdbh_user
     password: NjuwXosM8H4TnII1cajGXzydrdQTnqun
@@ -12,12 +14,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
-# TO GET A MESSAGE FROM OUR EXCEPTION
 server:
   error:
     include-message: always
 
-#
 
 #spring:
 #  datasource:
