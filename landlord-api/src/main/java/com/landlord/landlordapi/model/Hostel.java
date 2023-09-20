@@ -18,7 +18,7 @@ import java.util.List;
 public class Hostel {
 //    hostel
     private Long id;
-    @Column(name = "hostel_name", nullable = false, length = 90)
+    @Column(name = "hostel_name", nullable = false, length = 90,unique = true)
     private String hostel_name;
     private String gender;
     private String rentalFee;

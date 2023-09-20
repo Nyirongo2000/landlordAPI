@@ -18,6 +18,7 @@ public class HostelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String hostel_name;
     private String gender; 
     private String rentalFee;
