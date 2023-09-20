@@ -2,7 +2,7 @@ spring:
   datasource:
     hikari:
       maxLifetime: 1800000 # 30 minutes (adjust this value as needed)
-    url: jdbc:postgresql://dpg-ck45e936fquc73cithig-a:5432/landlord_vdbh
+    url: jdbc:postgresql://dpg-ck45e936fquc73cithig-a.oregon-postgres.render.com:5432/landlord_vdbh
     username: landlord_vdbh_user
     password: NjuwXosM8H4TnII1cajGXzydrdQTnqun
   jpa:
