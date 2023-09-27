@@ -1,7 +1,6 @@
 package com.landlord.landlordapi.service;
 
 import com.landlord.landlordapi.entity.Attachment;
-import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface AttachmentService {
@@ -9,4 +8,3 @@ public interface AttachmentService {
 
     Attachment getAttachment(String fileId) throws Exception;
 }
-

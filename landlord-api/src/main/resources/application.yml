@@ -117,15 +117,30 @@
 server:
   port:8080
 
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/landlord
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
 ##      update
 ##      create-drop
+#  # File upload and download configurations
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 50KB  # Threshold after which files are written to disk
+      max-file-size: 200MB     # Max file size
+      max-request-size: 215MB  # Max request size
+  error:
+    include-message: always
+
+

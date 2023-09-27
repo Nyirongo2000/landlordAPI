@@ -1,9 +1,6 @@
 package com.landlord.landlordapi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Arrays;
@@ -16,8 +13,9 @@ public class Attachment {
     private String id;
     private String fileName;
     private String fileType;
-    // the entire file will be stored in the database as a bitarray data
+// the entire file will be stored in the database as a bitarray data
     @Lob
+    @Column( columnDefinition = "LONGTEXT")
     private byte[] data;
 
     public Attachment() {

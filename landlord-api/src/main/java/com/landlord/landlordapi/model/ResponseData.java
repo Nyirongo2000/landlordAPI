@@ -1,4 +1,5 @@
 package com.landlord.landlordapi.model;
+
 //will be sending and receiving it
 
 public class ResponseData {
