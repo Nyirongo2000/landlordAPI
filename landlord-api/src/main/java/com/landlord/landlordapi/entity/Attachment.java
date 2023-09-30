@@ -15,7 +15,7 @@ public class Attachment {
     private String fileType;
 // the entire file will be stored in the database as a bitarray data
     @Lob
-    @Column( columnDefinition = "LONGTEXT")
+    @Column( columnDefinition = "LONGTEXT",length = 1000)
     private byte[] data;
 
     public Attachment() {
