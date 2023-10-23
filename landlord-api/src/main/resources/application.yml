@@ -130,7 +130,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 ##      update
 ##      create-drop
 #  # File upload and download configurations

@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 @RestController
-@RequestMapping("/api/landlord/image")
+@RequestMapping("api/landlord/image")
 public class ImageController {
 
     @Autowired
@@ -31,4 +31,21 @@ public class ImageController {
                 .body(imageData);
 
     }
+
+    //	file storage
+//    @PostMapping("/fileSystem")
+//    public ResponseEntity<?> uploadImageToFIleSystem(@RequestParam("image")MultipartFile file) throws IOException {
+//        String uploadImage = service.uploadImageToFileSystem(file);
+//        return ResponseEntity.status(HttpStatus.OK)
+//                .body(uploadImage);
+//    }
+//
+//    @GetMapping("/fileSystem/{fileName}")
+//    public ResponseEntity<?> downloadImageFromFileSystem(@PathVariable String fileName) throws IOException {
+//        byte[] imageData=service.downloadImageFromFileSystem(fileName);
+//        return ResponseEntity.status(HttpStatus.OK)
+//                .contentType(MediaType.valueOf("image/png"))
+//                .body(imageData);
+//
+//    }
 }
