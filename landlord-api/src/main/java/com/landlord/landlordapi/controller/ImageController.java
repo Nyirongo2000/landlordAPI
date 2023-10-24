@@ -30,6 +30,8 @@ public class ImageController {
                 .contentType(MediaType.valueOf("image/png"))
                 .body(imageData);
 
+        System.out.println("get");
+
     }
 
     //	file storage
