@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/landlord")
 public class LandlordController {
-
+//test
     private final LandlordService landlordService;
     private final HostelService hostelService;
     @Autowired
